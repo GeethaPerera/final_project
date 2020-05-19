@@ -32,7 +32,7 @@ view(ex39_combined)
 
 ex39 <-select(ex39_combined,1,2,3,4,8,12,16) %>% 
   mutate(total_dw=shoot_dw+root_dw)%>% 
-  filter(longest_root != "-")
+  filter(longest_root != "-",shoot_dw !="-", root_dw !="-", root_length!='_', total_dw != '-')
 ex39
 view (ex39)
 
