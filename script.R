@@ -23,7 +23,7 @@ root_dw <- read_excel("Untitled/data/experiment_39.xlsx", sheet="root_dw") %>%
 root_dw$treatment <- factor(root_dw$treatment,levels = c("0 µM", "5 µM", "10 µM"))
 root_dw 
 
-root_length <- read_excel("data/experiment_39.xlsx", sheet="root_length") %>% 
+root_length <- read_excel("Untitled/data/experiment_39.xlsx", sheet="root_length") %>% 
   gather(treatment,root_length,"0 µM", "5 µM", "10 µM")%>% 
   mutate(root_length=as.numeric(root_length))
 root_length$treatment <- factor(root_length$treatment,levels = c("0 µM", "5 µM", "10 µM"))
@@ -50,7 +50,7 @@ long_root<- ggplot(data=ex39, aes(x=genotype, y=longest_root, colour=treatment))
 long_root
 
 long_root_final <- long_root+
-  labs(title="length of longest root", x= "genotype", y="root length (mm)")+
+  labs(title="length of the longest root", x= "Line name", y="root length (mm)")+
   theme_bw()+
   theme (axis.text = element_text(size = 6, angle = 90),
          axis.title = element_text(size = 8),
@@ -67,7 +67,7 @@ sdw <- ggplot(data=ex39, aes(x=genotype, y=shoot_dw, colour=treatment))+geom_box
 sdw
 
 sdw_final <- sdw+
-  labs(title="Shoot dry weight", x= "genotype", y="shoot dry weight (mg)")+
+  labs(title="Shoot dry weight", x= "Line name", y="shoot dry weight (mg)")+
   theme_bw()+
   theme (axis.text = element_text(size = 6, angle = 90),
          axis.title = element_text(size = 8),
@@ -83,7 +83,7 @@ rdw <- ggplot(data=ex39, aes(x=genotype, y=root_dw, colour=treatment))+geom_boxp
 
 rdw
 rdw_final <- rdw+
-  labs(title="Root dry weight", x= "genotype", y="root dry weight (mg)")+
+  labs(title="Root dry weight", x= "Line name", y="root dry weight (mg)")+
   theme_bw()+
   theme (axis.text = element_text(size = 6, angle = 90),
          axis.title = element_text(size = 8),
@@ -100,7 +100,7 @@ tdw <- ggplot(data=ex39, aes(x=genotype, y=total_dw, colour=treatment))+geom_box
 tdw
 
 tdw_final <- tdw+
-  labs(title="Total dry weight", x= "genotype", y="total dry weight (mg)")+
+  labs(title="Total dry weight", x= "Line name", y="total dry weight (mg)")+
   theme_bw()+
   theme (axis.text = element_text(size = 6, angle = 90),
          axis.title = element_text(size = 8),
@@ -116,7 +116,7 @@ rt_length <- ggplot(data=ex39, aes(x=genotype, y=root_length, colour=treatment))
 
 rt_length
 rt_length_final <- rt_length+
-  labs(title="Total root length", x= "genotype", y="root length (cm)")+
+  labs(title="Total root length", x= "Line name", y="root length (cm)")+
   theme_bw()+
   theme (axis.text = element_text(size = 6, angle = 90),
          axis.title = element_text(size = 8),
