@@ -50,7 +50,7 @@ long_root<- ggplot(data=ex39, aes(x=genotype, y=longest_root, colour=treatment))
 long_root
 
 long_root_final <- long_root+
-  labs(title="length of the longest root", x= "Line name", y="root length (mm)")+
+  labs(title="Length of the longest root", x= "Line name", y="root length (mm)")+
   theme_bw()+
   theme (axis.text = element_text(size = 6, angle = 90),
          axis.title = element_text(size = 8),
@@ -135,3 +135,27 @@ final_plot_dw
 
 final_plot_rl <- plot_grid(long_root_final+theme(legend.position ="none"),rt_length_final+theme(legend.position ="none"))
 final_plot_rl
+
+# calculation of means, standard deviation and standard error for each variable
+
+ex39_stats <- ex39 %>%
+  group_by(genotype, treatment) %>% 
+  summarise (num_rows = n(),
+             Avg_long_root = mean(longest_root),
+             med_long_root= median(longest_root),
+             sd_long_root=sd(longest_root),
+             se_long_root=(sd_long_root)/sqrt(num_rows),
+             Avg_shoot_dw = mean(shoot_dw),
+             sd_shoot_dw=sd(shoot_dw),
+             se_shoot_dw=(sd_shoot_dw)/sqrt(num_rows),
+             Avg_root_dw = mean(root_dw),
+             sd_root_dw=sd(root_dw),
+             se_root_dw =(sd_root_dw)/sqrt(num_rows),
+             Avg_root_length = mean(root_length),
+             sd_root_length=sd(root_length), 
+             se_root_length= (sd_root_length)/sqrt(num_rows),
+             Avg_total_dw = mean(total_dw),
+             sd_total_dw=sd(total_dw),
+             se_total_dw= (sd_total_dw)/sqrt(num_rows))
+ex39_stats
+
