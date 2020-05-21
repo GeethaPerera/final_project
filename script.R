@@ -43,7 +43,7 @@ view (ex39)
 
 # show the raw data using boxplots
 
-# length of longest root
+# length of the longest root
 
 long_root<- ggplot(data=ex39, aes(x=genotype, y=longest_root, colour=treatment))+geom_boxplot()+facet_wrap(~treatment)
 
@@ -158,4 +158,138 @@ ex39_stats <- ex39 %>%
              sd_total_dw=sd(total_dw),
              se_total_dw= (sd_total_dw)/sqrt(num_rows))
 ex39_stats
+
+# Plotting means with standard error bars
+
+# length of the longest root
+
+mean_long_root <- ex39_stats %>% 
+  ggplot(aes(x = genotype, y = Avg_long_root, colour=genotype))+
+  geom_point(size=2)+
+  geom_errorbar(aes(ymin=Avg_long_root-sd_long_root, 
+                    ymax=Avg_long_root+sd_long_root),size=1)+
+  facet_wrap(~treatment)
+
+mean_long_root 
+
+mean_long_root_final <- mean_long_root +
+  labs(title="Length of the longest root", x= "line name", y="root length (mm)", colour="Line name")+
+  theme_bw()+
+  theme (axis.text = element_text(size = 6, angle = 90),
+         axis.title = element_text(size = 8),
+         plot.title = element_text(size = 10),
+         legend.title = element_text(size = 8),
+         legend.text = element_text(size = 6),
+         strip.text = element_text(size = 10))+
+  ylim(0,175)
+
+mean_long_root_final
+
+
+# shoot dry weight
+
+mean_sdw <- ex39_stats %>% 
+  ggplot(aes(x = genotype,y = Avg_shoot_dw, colour=genotype))+
+  geom_point(size=2)+
+  geom_errorbar(aes(ymin=Avg_shoot_dw-se_shoot_dw, 
+                    ymax=Avg_shoot_dw+se_shoot_dw),size=1)+
+  facet_wrap(~treatment)
+
+mean_sdw 
+
+mean_sdw_final <- mean_sdw+labs(title="Shoot dry weight", x= "line name", y="shoot dry weight (mg)", colour="Line name")+
+  theme_bw()+
+  theme (axis.text = element_text(size = 6, angle = 90),
+         axis.title = element_text(size = 8),
+         plot.title = element_text(size = 10),
+         legend.title = element_text(size = 8),
+         legend.text = element_text(size = 6),
+         strip.text = element_text(size = 10))+
+  ylim (0,50)                                               
+mean_sdw_final
+
+# root dry weight
+
+mean_rdw <- ex39_stats %>% 
+  ggplot(aes(x = genotype,
+             y = Avg_root_dw, colour=genotype))+
+  geom_point(size=2)+
+  geom_errorbar(aes(ymin=Avg_root_dw-se_root_dw, 
+                    ymax=Avg_root_dw+se_root_dw),size=1)+
+  facet_wrap(~treatment)
+
+mean_rdw 
+mean_rdw_final <- mean_rdw+labs(title="Root dry weight", x= "line name", y="root dry weight (mg)", colour="Line name")+
+  theme_bw()+
+  theme (axis.text = element_text(size = 6, angle = 90),
+         axis.title = element_text(size = 8),
+         plot.title = element_text(size = 10),
+         legend.title = element_text(size = 8),
+         legend.text = element_text(size = 6),
+         strip.text = element_text(size = 10))+
+  ylim (0,50)                                                  
+mean_rdw_final
+
+# root length
+
+mean_rt_length <- ex39_stats %>% 
+  ggplot(aes(x = genotype,y = Avg_root_length, colour=genotype))+
+  geom_point(size=2)+
+  geom_errorbar(aes(ymin=Avg_root_length-se_root_length, 
+                    ymax=Avg_root_length+se_root_length), size=1)+
+  facet_wrap(~treatment)
+
+mean_rt_length
+
+mean_rt_length_final <- mean_rt_length+labs(title="Total root length", x= "line name", y="root length (cm)", colour="Line name")+
+  theme_bw()+
+  theme (axis.text = element_text(size = 6, angle = 90),
+         axis.title = element_text(size = 8),
+         plot.title = element_text(size = 10),
+         legend.title = element_text(size = 8),
+         legend.text = element_text(size = 6),
+         strip.text = element_text(size = 10))+
+  ylim (0,150)                                                                                    
+
+mean_rt_length_final
+
+# total dry weight
+
+mean_tdw <- ex39_stats %>% 
+  ggplot(aes(x = genotype,y = Avg_total_dw, colour=genotype))+
+  geom_point(size=2)+
+  geom_errorbar(aes(ymin=Avg_total_dw-se_total_dw, 
+                    ymax=Avg_total_dw+se_total_dw), size=1)+
+  facet_wrap(~treatment)
+
+mean_tdw
+
+mean_tdw_final <- mean_tdw+labs(title="Total dry weight", x= "line name", y="total dry weight (mg)", colour="Line name")+
+  theme_bw()+
+  theme (axis.text = element_text(size = 6, angle = 90),
+         axis.title = element_text(size = 8),
+         plot.title = element_text(size = 10),
+         legend.title = element_text(size = 8),
+         legend.text = element_text(size = 6),
+         strip.text = element_text(size = 10))+
+  ylim (0,50)                                                
+mean_tdw_final
+
+# Final plot for means
+
+# dry weights
+
+final_mean_dw_plot <- plot_grid(mean_sdw_final+theme(legend.position ="none"), mean_rdw_final+theme(legend.position ="none"), mean_tdw_final+theme(legend.position ="none"), nrow = 1, rel_widths = c (1,1)) 
+final_mean_dw_plot
+
+
+
+# root lengths
+
+final_mean_rl_plot <- plot_grid(mean_long_root_final+theme(legend.position ="none"), mean_rt_length_final+theme(legend.position ="none"),nrow = 1, rel_widths = c (1,1))
+
+final_mean_rl_plot
+
+final_mean_rl_plot_with_legend <- plot_grid(final_mean_rl_plot,get_legend(mean_long_root_final))
+final_mean_rl_plot_with_legend
 
