@@ -293,3 +293,38 @@ final_mean_rl_plot
 final_mean_rl_plot_with_legend <- plot_grid(final_mean_rl_plot,get_legend(mean_long_root_final))
 final_mean_rl_plot_with_legend
 
+# relationships between root length and dry weights
+
+# root length vs total dry weight
+
+rl_dw<- ggplot(data=ex39, aes(x=root_length, y=total_dw, colour=genotype))+geom_point()+
+  geom_smooth(method = "lm", size = 0.5, se=FALSE)+facet_wrap(~treatment)
+rl_dw
+
+rl_dw_final <- rl_dw+labs(x= "total root length (cm)", y="total dry weight (mg)", colour="Line name")+
+                            theme_bw()+
+                            theme (axis.text = element_text(size = 6),
+                                   axis.title = element_text(size = 8),
+                                   plot.title = element_text(size = 10),
+                                   legend.title = element_text(size = 8),
+                                   legend.text = element_text(size = 6),
+                                   strip.text = element_text(size = 10))
+
+rl_dw_final
+
+# length of longest root vs total dry weight
+
+lr_dw<- ggplot(data=ex39, aes(x=longest_root, y=total_dw, colour=genotype))+geom_point()+
+  geom_smooth(method = "lm", size = 0.5, se=FALSE)+facet_wrap(~treatment)
+
+lr_dw
+
+lr_dw_final <- lr_dw+labs(x= "length of the longest root (mm)", y="total dry weight (mg)", colour="Line name")+
+  theme_bw()+
+  theme (axis.text = element_text(size = 6),
+         axis.title = element_text(size = 8),
+         plot.title = element_text(size = 10),
+         legend.title = element_text(size = 8),
+         legend.text = element_text(size = 6),
+         strip.text = element_text(size = 10))
+lr_dw_final
