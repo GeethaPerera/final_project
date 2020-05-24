@@ -30,12 +30,12 @@ library(cowplot)
 
 
 # Introduction
-I am Geetha Perera, a Research Technician with Agriculture and Food based in Canberra. At present I am a part of the Soil Constraint research team in the Crops Program.  I had no experience in R before Data School, tried to self-learn but never happened.  I have been using Excel extensively to record, summarise and visualise data mostly using bar graphs.  My main aim in Data School was to learn coding with R to replace the repetitive steps that I do with data sets in Excel.  Data school FOCUS was a great learning experience for me and I am amazed to see how helpful R is for tidying up and visualising data which allows us seeing an in-depth picture. 
+I am Geetha Perera, a Research Technician with Agriculture and Food based in Canberra. At present I am a part of the Soil Constraint research team in the Crops Program.  I had no experience in R before Data School, tried to self-learn but never happened.  I have been using Excel extensively to record, summarise and visualise data mostly using bar graphs.  My main aim in Data School FOCUS was to learn coding with R to replace the repetitive steps that I follow when working with data sets in Excel.  
 
 # My Project
-Aluminium toxicity is one of the main stresses to plants in acid soils which limits yields of major crops in Australia.    Use of Aluminium resistant crops is one strategy to enable production in these soils in addition to soil management strategies such as liming. In a transgenic approach to increase the tolerance to Aluminium in canola, transgenic canola lines have been produced in CSIRO by transforming the canola cultivar Oscar with two genes related to aluminium tolerance one from wheat (_TaALMT1_) and/ or barely (_HvAACT1_).
+Aluminium toxicity is one of the main stresses to plants in acid soils which limits yields of major crops in Australia.    Use of aluminium resistant crops is one strategy to enable production in these soils in addition to soil management strategies such as liming. In a transgenic approach to increase the tolerance to aluminium in canola, transgenic canola lines have been produced in CSIRO by transforming the canola cultivar Oscar with two genes related to aluminium tolerance from wheat (_TaALMT1_) and/ or barely (_HvAACT1_).
 
-Seedlings of T1 and T2 families of transgenic lines were screened in a series of hydroponic experiments (Figure 1) to investigate the effect of aluminium concentration on the early growth and to select any better lines to screen in further experiments.  In each experiment seedlings were grown for two weeks in three concentrations of aluminium (0 µM, 5 µM and 1 0µM) and data on length of the longest root (Figure 2), total root length (by scanning using WinRhizo), shoot dry weight and root dry weight were collected (Table 1).
+Seedlings of T1 and T2 families of these transgenic lines were screened in a series of hydroponic experiments (Figure 1) to investigate the effect of aluminium on their early growth and to select any better performing lines for further screening.  In each screen, seedlings were grown in three concentrations of aluminium (0 µM, 5 µM and 10 µM) in a nutrient solution for two weeks and data on the length of the longest root (Figure 2), total root length (by scanning), shoot dry weight and root dry weight were collected (Table 1).
 
 ```{r echo=FALSE, out.width='50%', fig.cap="Set up of the hydroponic experiments"}
 knitr::include_graphics('resources/img/setup.jpg')
@@ -45,7 +45,7 @@ knitr::include_graphics('resources/img/setup.jpg')
 knitr::include_graphics('resources/img/measure_root.jpg')
 ```
 
-For the data school project, I selected one experiment (Experiment 39) to summarise and visualise data with the aim of repeating this process to look at the data of the other experiments. One T1 generation canola line (T1 3672-19) and its T2 generation line (T2 3672-19-1) with Oscar (as the control) were screened in this particular experiment. 
+For the Data School project, I have used the data of one transgenic screen (Experiment 39) to summarise and visualise data with the aim of repeating this process in examining the data of the other screens. Seedlings of one T1 generation family (T1 3672-19) and its T2 generation family (T2 3672-19-1) with the cultivar Oscar (as the control) were screened in this particular experiment. 
 
 
 ## Preliminary results
@@ -270,11 +270,6 @@ rl_dw_final <- rl_dw+labs(x= "total root length (cm)", y="total dry weight (mg)"
 rl_dw_final
 ```
 
-**Images from a file**
-
-
-![](resources/img/tidyverse.png){width=100px}
-
 **Plots from R**
 ```{r standard-plot, out.width='60%', fig.align='center', fig.height= 4, fig.width=6, fig.cap="Yet another gapminder plot"}
 gapminder %>% 
@@ -293,38 +288,33 @@ if needed: see eg. Table \@ref(tab:mytable) and Figure \@ref(fig:standard-plot)
 
 # My Digital Toolbox
 
-<-- What digital tools have you been using in your project? Do you expect that everything will be able 
-to be completed within R, or will you need to work with multiple tools to get the right result?
-Which of the digital skills needed for your project have you learned since starting Data School?
+I have been using R version `r getRversion()` for this project and the digital tools used were
 
-You can use all the usual R markdown features in writing a project summary, including lists:
+* _tidyverse_
+* _readxl_
+* _ggplot2_ and
+* _kableExtra_
 
-* R - dplyr, ggplot, ...
-* Python
-* SQL-->
+## Favourite tools
 
-## Favourite tool (optional)
+![](resources/img/tidyverse.png){width=110px}
+![](resources/img/ggplot2.png){width=100px}
 
-Is there a tool/package/function in particular that you've enjoyed using? Give it a special shout out here. What about this tool makes it your favourite?
 
-![](https://raw.githubusercontent.com/tidyverse/ggplot2/master/man/figures/logo.png){.pull-right width=100px}
-
-No prizes for guessing mine:
 
 # My time went ...
 
-What parts of your project take the most time and effort? Were there any surprising challenges you
-encountered, and how did you solve them?
+I spent a reasonable time on tidying up the data.  Data of each variable were in a separate worksheet in Excel, I tempted to tidy them in Excel but read directly from Excel and tidied up in R instead. Visualising took longer than expected as I created various plots to select the ones to best visualise the data and I had to troubleshoot to get a code to run sometimes.
 
 # Next steps
 
-What further steps do you wish your project could take? Or are there any new digital skills that you
-are keen to develop as a result of your involvement in the Data School?
+I will use the process that I developed in this project to look at the data of the other experiments done to screen GM canola for aluminium tolerance probably after modifying if necessary.
+I am keen to learn more and practice regular expression, functions and statistical analysis using R.
+
 
 # My Data School Experience
 
-This summary is mostly about your project. However we would also like to hear about other
-parts of your Data School experience. What aspects of the program did you really enjoy? Have you
-tried applying the skills you have learned in your daily work? Have you been able to transfer this 
-knowledge to your team members? Any descriptions of the personal impact the program has 
-had are welcome here as well!
+Data school FOCUS was a great learning experience for me and it was amazing to see how helpful R is for tidying up and visualising data.  The way the program has been structured and the support of the great teachers and the helpers made it much more enjoyable learning experience.  Applying the new skills that I learned to some of the data that I have collected in a project was also very exciting and I am looking forward to explore this data set more using R.
+I will definitely use this knowledge and keep coding as a regular practice in my future projects.  We already started having conversations within our team on the use of coding as a regular practice and how we could share our knowledge among the team members.
+
+
