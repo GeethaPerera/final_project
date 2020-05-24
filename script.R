@@ -128,7 +128,7 @@ rt_length_final
 
 # final boxplot for dry weights 
 
-final_plot_dw <- plot_grid(sdw_final+theme(legend.position ="none"), rdw_final+theme(legend.position ="none"), tdw_final+theme(legend.position ="none"))
+final_plot_dw <- plot_grid(sdw_final+theme(legend.position ="none"), rdw_final+theme(legend.position ="none"), tdw_final+theme(legend.position ="none"), nrow = 1)
 final_plot_dw
 
 # final boxplot for root lengths 
