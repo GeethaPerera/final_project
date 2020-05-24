@@ -35,7 +35,7 @@ I am Geetha Perera, a Research Technician with Agriculture and Food based in Can
 # My Project
 Aluminium toxicity is one of the main stresses to plants in acid soils which limits yields of major crops in Australia.    Use of aluminium resistant crops is one strategy to enable production in these soils in addition to soil management strategies such as liming. In a transgenic approach to increase the tolerance to aluminium in canola, transgenic canola lines have been produced in CSIRO by transforming the canola cultivar Oscar with two genes related to aluminium tolerance from wheat (_TaALMT1_) and/ or barely (_HvAACT1_).
 
-Seedlings of T1 and T2 families of these transgenic lines were screened in a series of hydroponic experiments (Figure 1) to investigate the effect of aluminium on their early growth and to select any better performing lines for further screening.  In each screen, seedlings were grown in three concentrations of aluminium (0 µM, 5 µM and 10 µM) in a nutrient solution for two weeks and data on the length of the longest root (Figure 2), total root length (by scanning), shoot dry weight and root dry weight were collected (Table 1).
+Seedlings of T1 and T2 families of these transgenic lines were screened in a series of hydroponic experiments (Figure 1) to investigate the effect of aluminium on their early growth and to select any better performing lines for further screening.  In each screen, seedlings were grown in three concentrations of aluminium (0 µM, 5 µM and 10 µM) in a nutrient solution for two weeks and data on the length of the longest root (Figure 2), total root length (by scanning), shoot dry weight and root dry weight were collected. 
 
 ```{r echo=FALSE, out.width='50%', fig.cap="Set up of the hydroponic experiments"}
 knitr::include_graphics('resources/img/setup.jpg')
@@ -116,10 +116,10 @@ sdw <- ggplot(data=ex39, aes(x=genotype, y=shoot_dw, colour=treatment))+geom_box
 sdw_final <- sdw+
   labs(title="Shoot dry weight", x= "line name", y="shoot dry weight (mg)")+
   theme_bw()+
-  theme (axis.text = element_text(size = 6, angle = 90),
-         axis.title = element_text(size = 8),
-         plot.title = element_text(size = 10),
-         strip.text = element_text(size = 6))
+  theme (axis.text = element_text(size = 8, angle = 90),
+         axis.title = element_text(size = 12),
+         plot.title = element_text(size = 12),
+         strip.text = element_text(size = 10))
 
 
 # root dry weight
@@ -130,10 +130,10 @@ rdw <- ggplot(data=ex39, aes(x=genotype, y=root_dw, colour=treatment))+geom_boxp
 rdw_final <- rdw+
   labs(title="Root dry weight", x= "line name", y="root dry weight (mg)")+
   theme_bw()+
-  theme (axis.text = element_text(size = 6, angle = 90),
-         axis.title = element_text(size = 8),
-         plot.title = element_text(size = 10),
-         strip.text = element_text(size = 6))
+  theme (axis.text = element_text(size = 8, angle = 90),
+         axis.title = element_text(size = 12),
+         plot.title = element_text(size = 12),
+         strip.text = element_text(size = 10))
 
 # total dry weight
 
@@ -142,10 +142,10 @@ tdw <- ggplot(data=ex39, aes(x=genotype, y=total_dw, colour=treatment))+geom_box
 tdw_final <- tdw+
   labs(title="Total dry weight", x= "line name", y="total dry weight (mg)")+
   theme_bw()+
-  theme (axis.text = element_text(size = 6, angle = 90),
-         axis.title = element_text(size = 8),
-         plot.title = element_text(size = 10),
-         strip.text = element_text(size = 6))
+  theme (axis.text = element_text(size = 8, angle = 90),
+         axis.title = element_text(size = 12),
+         plot.title = element_text(size = 12),
+         strip.text = element_text(size = 10))
 ```
 
 
@@ -153,11 +153,10 @@ tdw_final <- tdw+
 
 # final boxplot for dry weights 
 
-final_plot_dw <- plot_grid(sdw_final+theme(legend.position ="none"), rdw_final+theme(legend.position ="none"), tdw_final+theme(legend.position ="none"))
+final_plot_dw <- plot_grid(sdw_final+theme(legend.position ="none"), rdw_final+theme(legend.position ="none"), tdw_final+theme(legend.position ="none"),nrow = 1)
 final_plot_dw
 ```
 
-Figure 2 shows the length of the longest root, and total root length in each of the genotype in each treatment of Aluminum. 
 
 ```{r, root_length, eval=TRUE, echo= FALSE, results='hide'}
 
@@ -168,22 +167,22 @@ long_root<- ggplot(data=ex39, aes(x=genotype, y=longest_root, colour=treatment))
 long_root_final <- long_root+
   labs(title="length of longest root", x= "line name", y="root length (mm)")+
   theme_bw()+
-  theme (axis.text = element_text(size = 6, angle = 90),
+  theme (axis.text = element_text(size = 8, angle = 90),
          axis.title = element_text(size = 8),
-         plot.title = element_text(size = 12),
+         plot.title = element_text(size = 10),
          legend.title = element_text(size = 10),
-         strip.text = element_text(size = 6))
+         strip.text = element_text(size = 8))
 
 rt_length <- ggplot(data=ex39, aes(x=genotype, y=root_length, colour=treatment))+geom_boxplot()+facet_wrap(~treatment)
 
 rt_length_final <- rt_length+
   labs(title="Total root length", x= "line name", y="root length (cm)")+
   theme_bw()+
-  theme (axis.text = element_text(size = 6, angle = 90),
+  theme (axis.text = element_text(size = 8, angle = 90),
          axis.title = element_text(size = 8),
-         plot.title = element_text(size = 12),
+         plot.title = element_text(size = 10),
          legend.title = element_text(size = 10),
-         strip.text = element_text(size = 6))
+         strip.text = element_text(size = 8))
 
 ```
 
