@@ -294,9 +294,56 @@ final_mean_dw_plot <- plot_grid(mean_sdw_final+theme(legend.position ="none"), m
 final_mean_dw_plot
 ```
 
+```{r, mean_root_lengths, eval=TRUE, echo= FALSE, results='hide'}
+
+# length of the longest root
+
+mean_long_root <- ex39_stats %>% 
+  ggplot(aes(x = genotype, y = Avg_long_root, colour=genotype))+
+  geom_point(size=2)+
+  geom_errorbar(aes(ymin=Avg_long_root-sd_long_root, 
+                    ymax=Avg_long_root+sd_long_root),size=1)+
+  facet_wrap(~treatment)
+
+mean_long_root_final <- mean_long_root +
+  labs(title="Length of the longest root", x= "line name", y="root length (mm)", colour="Line name")+
+  theme_bw()+
+  theme (axis.text = element_text(size = 6, angle = 90),
+         axis.title = element_text(size = 8),
+         plot.title = element_text(size = 10),
+         legend.title = element_text(size = 8),
+         legend.text = element_text(size = 6),
+         strip.text = element_text(size = 8))+
+  ylim(0,175)
+
+mean_rt_length <- ex39_stats %>% 
+  ggplot(aes(x = genotype,y = Avg_root_length, colour=genotype))+
+  geom_point(size=2)+
+  geom_errorbar(aes(ymin=Avg_root_length-se_root_length, 
+                    ymax=Avg_root_length+se_root_length), size=1)+
+  facet_wrap(~treatment)
+
+mean_rt_length_final <- mean_rt_length+labs(title="Total root length", x= "line name", y="root length (cm)", colour="Line name")+
+  theme_bw()+
+  theme (axis.text = element_text(size = 6, angle = 90),
+         axis.title = element_text(size = 8),
+         plot.title = element_text(size = 10),
+         legend.title = element_text(size = 8),
+         legend.text = element_text(size = 6),
+         strip.text = element_text(size = 8))+
+  ylim (0,150)                                 
+```
+
+```{r 6, out.width='60%', fig.align='center', fig.height= 4, fig.width=6, fig.cap="Mean root lengths"}
+# root lengths
+
+final_mean_rl_plot <- plot_grid(mean_long_root_final+theme(legend.position ="none"), mean_rt_length_final+theme(legend.position ="none"),nrow = 1, rel_widths = c (1,1))
+
+final_mean_rl_plot
+```
 Figures 5 and 6 shows the relationships between the total dry weights, the above ground variable measured and the length of the longest root and the total root length, the two below ground variables measured.  Total root length seems to be a better variable to measure in comparison with the length of the longest root, as it correlates better with the dry weights.
 
-```{r 6, out.width='60%', fig.align='center', fig.height= 4, fig.width=6, fig.cap="length of the longest root vs total dry weight"}
+```{r 7, out.width='60%', fig.align='center', fig.height= 4, fig.width=6, fig.cap="length of the longest root vs total dry weight"}
 
 # length of longest root vs total dry weight
 
@@ -316,7 +363,7 @@ lr_dw_final
 
 ```
 
-```{r 7, out.width='60%', fig.align='center', fig.height= 4, fig.width=6, fig.cap="Total root length vs total dry weight"}
+```{r 8, out.width='60%', fig.align='center', fig.height= 4, fig.width=6, fig.cap="Total root length vs total dry weight"}
 
 # root length vs total dry weight
 
