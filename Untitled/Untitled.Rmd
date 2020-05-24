@@ -193,7 +193,7 @@ final_plot_rl <- plot_grid(long_root_final+theme(legend.position ="none"),rt_len
 final_plot_rl
 ```
 
-Data on means and standard errors calculated for each line at each concentration of Aluminium for each variable are listed in Table 2.  No effort was made to remove outliers before summarising as the T1 and T2 generations are still segregating and it is possible to show see extremes.  These data were also plotted using R but not displayed in this report.  None of the transgenic lines screened in this particular experiment seems to be performing better in the Aluminium treatments when compared with the control. 
+Data on means and standard errors were calculated for each line at each concentration of Aluminium and data were plotted. No effort was made to remove outliers before summarising as the T1 and T2 generations are still segregating and it is possible to see extremes. None of the transgenic lines screened in this particular experiment seems to be performing better in the Aluminium treatments when compared with the control. 
 
 ```{R, stats,eval=TRUE, results='hide'}
 
@@ -220,13 +220,6 @@ ex39_stats <- ex39 %>%
              se_total_dw= (sd_total_dw)/sqrt(num_rows))
 ```
 
-```{r mytable2, out.width='100%', echo = F}
-ex39_stats_data <- ex39_stats %>% 
-  select(genotype, treatment, Avg_long_root, se_long_root,Avg_root_length,se_root_length, Avg_total_dw,se_total_dw) %>% rename(`Line`= genotype, `Aluminium concentration` = treatment,`longest root (mean)`= Avg_long_root, `longest root (se)`=se_long_root, `total dw (mean)`= Avg_total_dw, `total dw (se)`=se_total_dw, `root length (mean)`= Avg_root_length, `root length (se)` = se_root_length)
-
-knitr::kable(head(ex39_stats_data, n = 9), format = "html", caption = "Means and standard errors of data collected") %>% 
-  kable_styling("striped")
-```
 
 ```{r, mean_dry_weights, eval=TRUE, echo= FALSE, results='hide'}
 
