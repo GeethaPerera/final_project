@@ -121,10 +121,10 @@ sdw <- ggplot(data=ex39, aes(x=genotype, y=shoot_dw, colour=treatment))+geom_box
 sdw_final <- sdw+
   labs(title="Shoot dry weight", x= "line name", y="shoot dry weight (mg)")+
   theme_bw()+
-  theme (axis.text = element_text(size = 10, angle = 90),
-         axis.title = element_text(size = 12),
-         plot.title = element_text(size = 12),
-         strip.text = element_text(size = 10))
+  theme (axis.text = element_text(size = 6, angle = 90),
+         axis.title = element_text(size = 8),
+         plot.title = element_text(size = 10),
+         strip.text = element_text(size = 8))
 
 
 # root dry weight
@@ -135,10 +135,10 @@ rdw <- ggplot(data=ex39, aes(x=genotype, y=root_dw, colour=treatment))+geom_boxp
 rdw_final <- rdw+
   labs(title="Root dry weight", x= "line name", y="root dry weight (mg)")+
   theme_bw()+
-  theme (axis.text = element_text(size = 10, angle = 90),
-         axis.title = element_text(size = 12),
-         plot.title = element_text(size = 12),
-         strip.text = element_text(size = 10))
+  theme (axis.text = element_text(size = 6, angle = 90),
+         axis.title = element_text(size = 8),
+         plot.title = element_text(size = 10),
+         strip.text = element_text(size = 8))
 
 # total dry weight
 
@@ -147,14 +147,14 @@ tdw <- ggplot(data=ex39, aes(x=genotype, y=total_dw, colour=treatment))+geom_box
 tdw_final <- tdw+
   labs(title="Total dry weight", x= "line name", y="total dry weight (mg)")+
   theme_bw()+
-  theme (axis.text = element_text(size = 10, angle = 90),
-         axis.title = element_text(size = 12),
-         plot.title = element_text(size = 12),
-         strip.text = element_text(size = 10))
+  theme (axis.text = element_text(size = 6, angle = 90),
+         axis.title = element_text(size = 8),
+         plot.title = element_text(size = 10),
+         strip.text = element_text(size = 8))
 ```
 
 
-```{r 3, out.width='60%', fig.align='center', fig.height= 4, fig.width=8, fig.cap="Dry weights",eval=TRUE, echo= FALSE, results='show'}
+```{r 3, out.width='60%', fig.align='center', fig.height= 4, fig.width=6, fig.cap="Dry weights",eval=TRUE, echo= FALSE, results='show'}
 
 # final boxplot for dry weights 
 
@@ -198,7 +198,7 @@ final_plot_rl <- plot_grid(long_root_final+theme(legend.position ="none"),rt_len
 final_plot_rl
 ```
 
-Data on means and standard errors were calculated for each line at each concentration of Aluminium and data were plotted. No effort was made to remove outliers before summarising as the T1 and T2 generations are still segregating and it is possible to see extremes. None of the transgenic lines screened in this particular experiment seems to be performing better in the Aluminium treatments when compared with the control. 
+Mean and standard error of each variable measured were calculated for each line at each concentration of aluminium (Figure 5 and Figure 6). Outliers were not removed before summarising the data as the individuals in T1 and T2 generations are still segregating. In general, none of the transgenic lines screened in this experiment performed better in the aluminium treatments when compared with the control. The T2 line showed slightly better root growth in 10 µM aluminium (Figure 6).
 
 ```{R, stats,eval=TRUE, results='hide'}
 
@@ -287,7 +287,7 @@ mean_tdw_final <- mean_tdw+labs(title="Total dry weight", x= "line name", y="tot
   ylim (0,50)                                                
 ```
 
-```{r 5, out.width='60%', fig.align='center', fig.height= 4, fig.width=6, fig.cap="Mean dry weights"}
+```{r 5, out.width='60%', fig.align='center', fig.height= 4, fig.width=6, fig.cap="Mean dry weight"}
 final_mean_dw_plot <- plot_grid(mean_sdw_final+theme(legend.position ="none"), mean_rdw_final+theme(legend.position ="none"), mean_tdw_final+theme(legend.position ="none"), nrow = 1, rel_widths = c (1,1)) 
 final_mean_dw_plot
 ```
@@ -332,7 +332,7 @@ mean_rt_length_final <- mean_rt_length+labs(title="Total root length", x= "line 
   ylim (0,150)                                 
 ```
 
-```{r 6, out.width='60%', fig.align='center', fig.height= 4, fig.width=6, fig.cap="Mean root lengths"}
+```{r 6, out.width='60%', fig.align='center', fig.height= 4, fig.width=6, fig.cap="Mean root length"}
 # root lengths
 
 final_mean_rl_plot <- plot_grid(mean_long_root_final+theme(legend.position ="none"), mean_rt_length_final+theme(legend.position ="none"),nrow = 1, rel_widths = c (1,1))
