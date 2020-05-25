@@ -380,22 +380,6 @@ rl_dw_final <- rl_dw+labs(x= "total root length (cm)", y="total dry weight (mg)"
 rl_dw_final
 ```
 
-**Plots from R**
-```{r standard-plot, out.width='60%', fig.align='center', fig.height= 4, fig.width=6, fig.cap="Yet another gapminder plot"}
-gapminder %>% 
-  filter(year == 1987) %>% 
-  ggplot(aes(x = gdpPercap, y = lifeExp, colour = continent, size = pop)) +
-  geom_point() +
-  scale_x_log10(labels = function(b) format(b, scientific = F)) +
-  scale_size(trans = "sqrt", guide = "none") +
-  scale_color_brewer(palette = "Set1") +
-  theme_linedraw() +
-  theme(legend.position = "bottom")
-```
-
-Your figure and table captions are automatically numbered and can be referenced in the text
-if needed: see eg. Table \@ref(tab:mytable) and Figure \@ref(fig:standard-plot)
-
 # My Digital Toolbox
 
 I have been using R version `r getRversion()` for this project and the digital tools used were
