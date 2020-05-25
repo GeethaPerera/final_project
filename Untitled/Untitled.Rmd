@@ -37,11 +37,11 @@ Aluminium toxicity is one of the main stresses to plants in acid soils which lim
 
 Seedlings of T1 and T2 families of these transgenic lines were screened in a series of hydroponic experiments (Figure 1) to investigate the effect of aluminium on their early growth and to select any better performing lines for further screening.  In each screen, seedlings were grown in three concentrations of aluminium (0 µM, 5 µM and 10 µM) in a nutrient solution for two weeks and data on the length of the longest root (Figure 2), total root length (by scanning), shoot dry weight and root dry weight were collected. 
 
-```{r echo=FALSE, out.width='50%', fig.cap="Set up of the hydroponic experiments"}
+```{r echo=FALSE, out.width='50%', fig.cap="Setup of the hydroponic experiments"}
 knitr::include_graphics('resources/img/setup.jpg')
 ```
 
-```{r echo=FALSE, out.width='50%', fig.cap="length of the longest root"}
+```{r echo=FALSE, out.width='50%', fig.cap="Measuring the length of the longest root"}
 knitr::include_graphics('resources/img/measure_root.jpg')
 ```
 
@@ -50,7 +50,7 @@ For the Data School project, I have used the data of one transgenic screen (Expe
 
 ## Preliminary results
 
-Table 1 shows the format of data after cleaning up, tidying and reorganising using R.
+Table 1 shows the format of the data after cleaning up, tidying and reorganising using R.
 
 
 ```{r tidy_data, eval=TRUE, results='hide'}
@@ -98,12 +98,17 @@ view (ex39)
 ```
 
 
-```{r mytable, out.width='100%', echo = F}
+```{r mytable, out.width='100%', echo = T}
 ex39_data <- ex39 %>% 
-  select(genotype, treatment, plant_no, longest_root, shoot_dw, root_dw, root_length, total_dw) %>% rename(`Line`= genotype, `Aluminium concentration` = treatment,`seedling number` = plant_no, `longest root length (mm)` = longest_root,`shoot dry weight (mg)` =shoot_dw,`root dry weight (mg)`= root_dw,`total root length (cm)` = root_length, `total dry weight (mg)`= total_dw) 
+  select(genotype, treatment, plant_no, longest_root, shoot_dw, root_dw, root_length, total_dw) %>% 
+rename(`Line`= genotype, `Aluminium concentration` = treatment,`seedling number` = plant_no, 
+`longest root length (mm)` 
+= longest_root,`shoot dry weight (mg)` =shoot_dw,
+`root dry weight (mg)`= root_dw,`total root length (cm)` = root_length, `total dry weight (mg)`= total_dw) 
 
-knitr::kable(head(ex39_data, n = 5), format = "html", caption = "Plant growth data collected at harvest") %>% 
-  kable_styling("striped")
+knitr::kable(head(ex39_data, n = 5), format = "html", 
+caption = "Seedling growth data after tidying up using R") %>% 
+kable_styling("striped")
 ```
 
 Raw data for dry weights, length of the longest root and total root length are shown using boxplots in Figures 3 and 4 respectively.  Showing data in this form helped to pick up the outliers easily and to see a broad picture of the response of each line to each level of Aluminium. 
