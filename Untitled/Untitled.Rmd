@@ -111,7 +111,7 @@ caption = "Seedling growth data after tidying up using R") %>%
 kable_styling("striped")
 ```
 
-Raw data for dry weights, length of the longest root and total root length are shown using boxplots in Figures 3 and 4 respectively.  Showing data in this form helped to pick up the outliers easily and to see a broad picture of the response of each line to each level of Aluminium. 
+Raw data for dry weights, length of the longest root and total root length are shown using boxplots in Figures 3 and 4 respectively.  Showing data in this form helped to pick up the outliers easily and to see a broad picture of the response of each line to each level of aluminium. 
 
 ```{r, dry_weights, eval=TRUE, echo= FALSE, results='hide'}
 # shoot dry weight
@@ -121,7 +121,7 @@ sdw <- ggplot(data=ex39, aes(x=genotype, y=shoot_dw, colour=treatment))+geom_box
 sdw_final <- sdw+
   labs(title="Shoot dry weight", x= "line name", y="shoot dry weight (mg)")+
   theme_bw()+
-  theme (axis.text = element_text(size = 8, angle = 90),
+  theme (axis.text = element_text(size = 10, angle = 90),
          axis.title = element_text(size = 12),
          plot.title = element_text(size = 12),
          strip.text = element_text(size = 10))
@@ -135,7 +135,7 @@ rdw <- ggplot(data=ex39, aes(x=genotype, y=root_dw, colour=treatment))+geom_boxp
 rdw_final <- rdw+
   labs(title="Root dry weight", x= "line name", y="root dry weight (mg)")+
   theme_bw()+
-  theme (axis.text = element_text(size = 8, angle = 90),
+  theme (axis.text = element_text(size = 10, angle = 90),
          axis.title = element_text(size = 12),
          plot.title = element_text(size = 12),
          strip.text = element_text(size = 10))
@@ -147,14 +147,14 @@ tdw <- ggplot(data=ex39, aes(x=genotype, y=total_dw, colour=treatment))+geom_box
 tdw_final <- tdw+
   labs(title="Total dry weight", x= "line name", y="total dry weight (mg)")+
   theme_bw()+
-  theme (axis.text = element_text(size = 8, angle = 90),
+  theme (axis.text = element_text(size = 10, angle = 90),
          axis.title = element_text(size = 12),
          plot.title = element_text(size = 12),
          strip.text = element_text(size = 10))
 ```
 
 
-```{r 3, out.width='60%', fig.align='center', fig.height= 6, fig.width=8, fig.cap="Dry weights",eval=TRUE, echo= FALSE, results='show'}
+```{r 3, out.width='60%', fig.align='center', fig.height= 4, fig.width=8, fig.cap="Dry weights",eval=TRUE, echo= FALSE, results='show'}
 
 # final boxplot for dry weights 
 
@@ -170,7 +170,7 @@ final_plot_dw
 long_root<- ggplot(data=ex39, aes(x=genotype, y=longest_root, colour=treatment))+geom_boxplot()+facet_wrap(~treatment)
 
 long_root_final <- long_root+
-  labs(title="length of longest root", x= "line name", y="root length (mm)")+
+  labs(title="Length of the longest root", x= "line name", y="root length (mm)")+
   theme_bw()+
   theme (axis.text = element_text(size = 8, angle = 90),
          axis.title = element_text(size = 8),
@@ -191,7 +191,7 @@ rt_length_final <- rt_length+
 
 ```
 
-```{r 4, out.width='60%', fig.align='center', fig.height= 4, fig.width=6, fig.cap="length of the longest root and total root length"}
+```{r 4, out.width='60%', fig.align='center', fig.height= 4, fig.width=6, fig.cap="Length of the longest root and total root length"}
 # final boxplot for root lengths 
 
 final_plot_rl <- plot_grid(long_root_final+theme(legend.position ="none"),rt_length_final+theme(legend.position ="none"))
