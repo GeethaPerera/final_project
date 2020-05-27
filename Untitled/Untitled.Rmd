@@ -386,7 +386,9 @@ I have been using R version `r getRversion()` for this project and the digital t
 
 * _tidyverse_
 * _readxl_
-* _ggplot2_ and
+* _ggplot2_ 
+* _rmarkdown_
+* _knitr_ and
 * _kableExtra_
 
 ## Favourite tools
@@ -413,4 +415,4 @@ I will definitely use this knowledge and keep coding as a regular practice in my
 
 # Acknowledgments
 
-A huge thank you to Kerensa McElroy, Stephen Pearce and all the other instructors, for your continuous support and time to teach us, Kristian Goodacre for keeping us together and making sure that we are moving forward and Gordon McLachlan, Emmett Leyne and all the other helpers who dedicated their time. A special thank you to Gilbert Permalloo, my colleague and the personal helper for my project for encouraging me enrolling in this program and his help with the project and Manny Delhaize, my line manager and my team for allowing me to commit time for learning.   
+A huge thank you to Kerensa McElroy, Stephen Pearce and all the other instructors, for your continuous support and time to teach us, Kristian Goodacre for keeping us together and making sure that we are moving forward and Gordon McLachlan, Emmett Leyne and all the other helpers who dedicated their time. A special thank you to Gilbert Permalloo, my colleague and the personal helper for my project for encouraging me enrolling in this program and his help with the project and Manny Delhaize, my line manager and my team for supporting me to commit time for learning.   
