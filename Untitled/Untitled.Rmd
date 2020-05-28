@@ -30,7 +30,7 @@ library(cowplot)
 
 
 # Introduction
-I am Geetha Perera, a Research Technician with Agriculture and Food based in Canberra. At present I am a part of the Soil Constraint research team in the Crops Program.  I had no experience in R before Data School, tried to self-learn but never happened.  I have been using Excel extensively to record, summarise and visualise data mostly using bar graphs.  My main aim in Data School FOCUS was to learn coding with R to replace the repetitive steps that I follow when working with data sets in Excel.  
+I am Geetha Perera, a Research Technician with Agriculture and Food based in Canberra. At present I am a part of the Soil Constraints research team in the Crops Program.  I had no experience in R before Data School, tried to self-learn but never happened.  I have been using Excel extensively to record, summarise and visualise data mostly using bar graphs.  My main aim in Data School FOCUS was to learn coding with R to replace the repetitive steps that I follow when working with data sets in Excel.  
 
 # My Project
 Aluminium toxicity is one of the main stresses to plants in acid soils which limits yields of major crops in Australia.    Use of aluminium resistant crops is one strategy to enable production in these soils in addition to soil management strategies such as liming. In a transgenic approach to increase the tolerance to aluminium in canola, transgenic canola lines have been produced in CSIRO by transforming the canola cultivar Oscar with two genes related to aluminium tolerance from wheat (_TaALMT1_) and/ or barely (_HvAACT1_).
